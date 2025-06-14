@@ -1,0 +1,44 @@
+.pareamento-card {
+  background-color: #fff8f5;
+  border: 2px solid #ffc4b3;
+  border-radius: 16px;
+  padding: 20px;
+  max-width: 320px;
+  margin: 50px auto;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.warning-icon {
+  font-size: 2rem;
+  color: #e8592b;
+  margin-bottom: 10px;
+}
+
+.pareamento-card h2 {
+  font-size: 1.3rem;
+  color: #c0392b;
+  margin-bottom: 10px;
+}
+
+.pareamento-card p {
+  color: #7d5a50;
+  margin-bottom: 20px;
+}
+
+/* Spinner de carregamento */
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #ffaf9b;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
