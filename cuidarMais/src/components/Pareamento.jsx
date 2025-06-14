@@ -10,7 +10,8 @@ const Pareamento = () => {
       <p>Aguardando conexão com o dispositivo...</p>
       <div className="spinner"></div>
     </div>
-  );
-};
+
+ 
+)};
 
 export default Pareamento;
