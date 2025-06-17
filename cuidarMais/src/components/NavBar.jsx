@@ -1,5 +1,5 @@
 import React from "react";
-import "./Navbar.css";
+import "./NavBar.css";
 import { FaHome, FaSearch, FaBell, FaUser } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
