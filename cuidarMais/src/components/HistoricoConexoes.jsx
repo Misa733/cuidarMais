@@ -1,4 +1,5 @@
 import React from "react";
+import { Box, Text, Heading, UnorderedList, ListItem } from "@chakra-ui/react"; //
 
 const conexoes = [
   { id: 1, data: "2025-06-14 10:10", status: "Conectado" },
@@ -8,22 +9,25 @@ const conexoes = [
 
 export function HistoricoConexoes() {
   return (
-    <div style={cardStyle}>
-      <h3 style={{ marginBottom: 10 }}>Histórico de Conexões</h3>
-      <ul style={{ listStyle: "none", padding: 0 }}>
+    <Box
+      bg="white"
+      p={6}
+      borderRadius="xl"
+      boxShadow="md"
+    >
+      <Heading as="h3" size="md" mb={4}> {/* */}
+        Histórico de Conexões
+      </Heading>
+      <UnorderedList listStyleType="none" p={0}> {/* */}
         {conexoes.map((item) => (
-          <li key={item.id} style={{ marginBottom: 8, fontSize: 14 }}>
-            <strong>{item.status}</strong> em {item.data}
-          </li>
+          <ListItem key={item.id} mb={2} fontSize="sm"> {/* */}
+            <Text as="strong" color={item.status === "Conectado" ? "green.600" : "red.600"}> {/* */}
+              {item.status}
+            </Text>{" "}
+            em {item.data}
+          </ListItem>
         ))}
-      </ul>
-    </div>
+      </UnorderedList>
+    </Box>
   );
 }
-
-const cardStyle = {
-  backgroundColor: "#fff",
-  padding: 20,
-  borderRadius: 12,
-  boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
-};

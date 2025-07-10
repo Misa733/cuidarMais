@@ -1,4 +1,5 @@
 import React from "react";
+import { Box, Text, Heading, Flex } from "@chakra-ui/react"; //
 
 const dados = [
   { dia: "Seg", quedas: 1 },
@@ -12,30 +13,31 @@ const dados = [
 
 export function DashboardQuedas() {
   return (
-    <div style={cardStyle}>
-      <h3 style={{ marginBottom: 10 }}>Riscos de Queda (últimos 7 dias)</h3>
-      <div style={{ display: "flex", gap: 10 }}>
+    <Box
+      bg="white"
+      p={6}
+      borderRadius="xl"
+      boxShadow="md"
+    >
+      <Heading as="h3" size="md" mb={4}> {/* */}
+        Riscos de Queda (últimos 7 dias)
+      </Heading>
+      <Flex gap={2} justify="space-around" alignItems="flex-end"> {/* */}
         {dados.map((item, index) => (
-          <div key={index} style={{ textAlign: "center" }}>
-            <div
-              style={{
-                height: `${item.quedas * 20}px`,
-                width: 20,
-                backgroundColor: item.quedas > 0 ? "#e74c3c" : "#2ecc71",
-                marginBottom: 4,
-              }}
-            ></div>
-            <small>{item.dia}</small>
-          </div>
+          <Box key={index} textAlign="center">
+            <Box
+              h={`${item.quedas * 20 + 20}px`} // Add a base height to make 0 visible
+              w="20px"
+              bg={item.quedas > 0 ? "red.400" : "green.400"} //
+              mb={1}
+              borderRadius="md" //
+            ></Box>
+            <Text fontSize="sm" color="gray.600"> {/* */}
+              {item.dia}
+            </Text>
+          </Box>
         ))}
-      </div>
-    </div>
+      </Flex>
+    </Box>
   );
 }
-
-const cardStyle = {
-  backgroundColor: "#fff",
-  padding: 20,
-  borderRadius: 12,
-  boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
-};
